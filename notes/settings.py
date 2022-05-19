@@ -97,9 +97,9 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 #     }
 # }
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(default='postgres://zrzjpdkdkjtxqd:053b23a35a657b07807655f5e2954703f91ba8c6e2455a0dc7c24fc5f345271d@ec2-34-201-95-176.compute-1.amazonaws.com:5432/d83vmbgc04160b')
-
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
