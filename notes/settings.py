@@ -81,21 +81,21 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-#         'NAME': 'django_note',
+        'NAME': 'django_note',
 
-#         'USER': 'postgres',
+        'USER': 'postgres',
 
-#         'PASSWORD': 'root',
+        'PASSWORD': 'root',
 
-#         'HOST': 'localhost',
+        'HOST': 'localhost',
 
-#         'PORT': '3307',
-#     }
-# }
+        'PORT': '3307',
+    }
+}
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
