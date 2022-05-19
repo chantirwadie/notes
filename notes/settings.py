@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SECRET_KEY = 'django-insecure-o1e&d8oo2zpg5h5-ma_391zw@oqj*%cg!8evluih+z2ra8r)t='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -97,7 +97,9 @@ DATABASES = {
     }
 }
 
+import dj_database_url
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
