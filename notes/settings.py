@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
+WSGI_APPLICATION = 'py_mrp.wsgi.application'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
