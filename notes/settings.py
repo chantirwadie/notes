@@ -58,18 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'notes.urls'
-CORS_ALLOW_HEADERS = [
-    "accept",
-    "accept-encoding",
-    "authorization",
-    "content-type",
-    "dnt",
-    "origin",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-    "refreshToken"
-]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -107,8 +96,8 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-# import dj_database_url
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 
@@ -130,12 +119,24 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "refreshToken"
+]
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-  'http://localhost:3000',
-  'http://localhost:8000',
+# CORS_ORIGIN_WHITELIST = (
+#   'http://localhost:3000',
+#   'http://localhost:8000',
 
-)
+# )
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -160,5 +161,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-"import django_heroku" 
-"django_heroku.settings(locals())" 
+import django_heroku
+django_heroku.settings(locals())
