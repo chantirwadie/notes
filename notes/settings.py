@@ -58,7 +58,18 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'notes.urls'
-
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "refreshToken"
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -93,11 +104,11 @@ DATABASES = {
 
         'HOST': 'localhost',
 
-        'PORT': '3307',
+        'PORT': '5432',
     }
 }
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 
